@@ -6,7 +6,7 @@ axios.get('https://api.jsonbin.io/v3/qs/63578b8b0e6a79321e33bf13').then(
     console.log('res:', res.data);
     http.createServer(function (req, res) {
       console.log(`Just got a request at ${req.url}!`)
-      res.write(res.data);
+      res.write(JSON.stringify(res.data));
       res.end();
     }).listen(process.env.PORT || 3000);
   }
